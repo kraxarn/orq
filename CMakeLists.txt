@@ -8,36 +8,23 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+# C++11
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# QtCreator supports the following variables for Android, which are identical to qmake Android variables.
-# Check http://doc.qt.io/qt-5/deployment-android.html for more information.
-# They need to be set before the find_package(Qt5 ...) call.
+# Find Qt
+find_package(Qt5 COMPONENTS Core Widgets Network Gui Svg REQUIRED)
 
-#if(ANDROID)
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-#    if (ANDROID_ABI STREQUAL "armeabi-v7a")
-#        set(ANDROID_EXTRA_LIBS
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so
-#            ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so)
-#    endif()
-#endif()
+# Glob source files
+file(GLOB MAIN_SRC "src/*.[hc]pp")
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+## Add all source files to main executable
+add_executable(orq ${MAIN_SRC})
 
-if(ANDROID)
-  add_library(orq SHARED
-    main.cpp
-    mainwindow.cpp
-    mainwindow.hpp
-  )
-else()
-  add_executable(orq
-    main.cpp
-    mainwindow.cpp
-    mainwindow.hpp
-  )
-endif()
-
-target_link_libraries(orq PRIVATE Qt5::Widgets)
+# Link Qt
+target_link_libraries(orq PRIVATE
+		Qt5::Core
+		Qt5::Widgets
+		Qt5::Network
+		Qt5::Gui
+		Qt5::Svg)
