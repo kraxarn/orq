@@ -23,8 +23,8 @@ add_executable(orq ${MAIN_SRC})
 
 # Link Qt
 target_link_libraries(orq PRIVATE
-		Qt5::Core
-		Qt5::Widgets
-		Qt5::Network
-		Qt5::Gui
-		Qt5::Svg)
+	Qt5::Core
+	Qt5::Widgets
+	Qt5::Network
+	Qt5::Gui
+	Qt5::Svg)
