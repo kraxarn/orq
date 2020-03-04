@@ -2,6 +2,8 @@
 
 #include <QApplication>
 
+#define VERSION "v1.90.0"
+
 int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
