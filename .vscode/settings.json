@@ -2,6 +2,5 @@
 	"editor.insertSpaces": false,
 	"editor.rulers": [
 		120
-	],
-	"C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+	]
 }

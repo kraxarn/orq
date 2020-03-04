@@ -4,8 +4,12 @@
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	MainWindow w;
-	w.show();
-	return a.exec();
+	QApplication app(argc, argv);
+	MainWindow window = MainWindow(nullptr);
+	window.setWindowTitle("orq");
+	window.setMinimumSize(960, 540);
+	window.resize(1280, 720);
+	window.AddMenuBar();
+	window.show();
+	return app.exec();
 }
