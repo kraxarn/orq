@@ -8,6 +8,10 @@
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
 {
+	setWindowTitle("orq");
+	setMinimumSize(960, 540);
+	resize(1280, 720);
+	AddMenuBar();
 }
 
 MainWindow::~MainWindow()
@@ -53,7 +57,7 @@ void MainWindow::AddMenuBar()
 	connect(_fileQuit, &QAction::triggered, this, &MainWindow::QuitProject);
 	_fileMenu->addAction(_fileQuit);
 
-	// Add filemenu to menubar
+	// Add file menu to menubar
 	_menubar->addMenu(_fileMenu);
 
 	// Edit menu
