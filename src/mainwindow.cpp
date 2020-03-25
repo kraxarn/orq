@@ -15,11 +15,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
-	delete fileNew;
-	delete fileOpen;
-	delete fileSaveAs;
-	delete fileQuit;
-	delete fileMenu;
 	delete menubar;
 }
 

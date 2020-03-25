@@ -14,10 +14,6 @@ public:
 private: 
 	QMenuBar	*menubar;
 	QMenu		*fileMenu;
-	QAction		*fileNew;
-	QAction		*fileOpen;
-	QAction		*fileSaveAs;
-	QAction		*fileQuit;
 
 	void addMenuBar();
 };
