@@ -32,19 +32,25 @@ void MainWindow::addMenuBar()
 	// New project
 	fileNew = new QAction("New...", this);
 	fileNew->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_N));
-	connect(fileNew, &QAction::triggered, this, &MainWindow::newProject);
+	connect(fileNew, &QAction::triggered, this, [](){
+		// ...
+	});
 	fileMenu->addAction(fileNew);
 	
 	// Open project
 	fileOpen = new QAction("Open...", this);
 	fileOpen->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
-	connect(fileOpen, &QAction::triggered, this, &MainWindow::ppenProject);
+	connect(fileOpen, &QAction::triggered, this, [](){
+		// ...
+	});
 	fileMenu->addAction(fileOpen);
 
 	// Save-as
 	fileSaveAs = new QAction("Save As...", this);
 	fileSaveAs->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
-	connect(fileSaveAs, &QAction::triggered, this, &MainWindow::SaveProject);
+	connect(fileSaveAs, &QAction::triggered, this, [](){
+		// ...
+	});
 	fileMenu->addAction(fileSaveAs);
 
 	// Add separator
@@ -53,7 +59,9 @@ void MainWindow::addMenuBar()
 	// Quit
 	fileQuit = new QAction("Quit", this);
 	fileQuit->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
-	connect(fileQuit, &QAction::triggered, this, &MainWindow::QuitProject);
+	connect(fileQuit, &QAction::triggered, this, [](){
+		// ...
+	});
 	fileMenu->addAction(fileQuit);
 
 	// Add file menu to menubar
