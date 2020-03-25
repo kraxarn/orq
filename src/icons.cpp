@@ -2,6 +2,9 @@
 
 #include <QHash>
 
+// Static definition
+QHash<QString, QString> Icons::iconNames = QHash<QString, QString>();
+
 Icons::Icons()
 {
 	if (iconNames.isEmpty())
