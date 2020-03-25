@@ -32,7 +32,7 @@ void MainWindow::addMenuBar()
 	// New project
 	fileNew = new QAction("New...", this);
 	fileNew->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_N));
-	connect(fileNew, &QAction::triggered, this, [](){
+	QAction::connect(fileNew, &QAction::triggered, this, [](){
 		// ...
 	});
 	fileMenu->addAction(fileNew);
@@ -40,7 +40,7 @@ void MainWindow::addMenuBar()
 	// Open project
 	fileOpen = new QAction("Open...", this);
 	fileOpen->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
-	connect(fileOpen, &QAction::triggered, this, [](){
+	QAction::connect(fileOpen, &QAction::triggered, this, [](){
 		// ...
 	});
 	fileMenu->addAction(fileOpen);
@@ -48,7 +48,7 @@ void MainWindow::addMenuBar()
 	// Save-as
 	fileSaveAs = new QAction("Save As...", this);
 	fileSaveAs->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
-	connect(fileSaveAs, &QAction::triggered, this, [](){
+	QAction::connect(fileSaveAs, &QAction::triggered, this, [](){
 		// ...
 	});
 	fileMenu->addAction(fileSaveAs);
@@ -59,7 +59,7 @@ void MainWindow::addMenuBar()
 	// Quit
 	fileQuit = new QAction("Quit", this);
 	fileQuit->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
-	connect(fileQuit, &QAction::triggered, this, [](){
+	QAction::connect(fileQuit, &QAction::triggered, this, [](){
 		// ...
 	});
 	fileMenu->addAction(fileQuit);
