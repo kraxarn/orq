@@ -7,9 +7,22 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-	setWindowTitle("orq");
+	// Set minimum and initial size
 	setMinimumSize(960, 540);
 	resize(1280, 720);
+
+	// Center window on screen
+	setGeometry(QStyle::alignedRect(
+		Qt::LeftToRight,
+		Qt::AlignCenter,
+		size(),
+		QGuiApplication::screens().at(0)->availableGeometry()
+	));
+
+	// Set window title
+	setWindowTitle("orq");
+
+	// Setup the rest of the stuff
 	addMenuBar();
 }
 
