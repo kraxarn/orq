@@ -18,8 +18,7 @@ public:
 	MainWindow(QWidget *parent = nullptr);
 	~MainWindow();
 
-private: 
-	QMenuBar	*menubar;
+private:
 	QDockWidget	*dockValidation;
 
 	void addMenuBar();

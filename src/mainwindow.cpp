@@ -28,14 +28,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 MainWindow::~MainWindow()
 {
-	delete menubar;
 	delete dockValidation;
 }
 
 void MainWindow::addMenuBar()
 {
-	// Main menu bar
-	menubar = new QMenuBar(this);
+	// File menu
+	auto fileMenu = menuBar()->addMenu("File");
 	
 	// File options
 	auto fileMenu = menubar->addMenu("File");
