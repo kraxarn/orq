@@ -1,10 +1,8 @@
 #include "mainwindow.hpp"
+#include "main.hpp"
 
 #include <QApplication>
 #include <QCoreApplication>
-
-// This should be set from CMake later
-#define VERSION "v1.90.0"
 
 int main(int argc, char *argv[])
 {
