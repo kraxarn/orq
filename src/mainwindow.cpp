@@ -5,71 +5,70 @@
 #include <QtGlobal>
 #include <QtDebug>
 
-MainWindow::MainWindow(QWidget *parent)
-	: QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
 	setWindowTitle("orq");
 	setMinimumSize(960, 540);
 	resize(1280, 720);
-	AddMenuBar();
+	addMenuBar();
 }
 
 MainWindow::~MainWindow()
 {
-	delete _fileNew;
-	delete _fileOpen;
-	delete _fileSaveAs;
-	delete _fileQuit;
-	delete _fileMenu;
-	delete _menubar;
+	delete fileNew;
+	delete fileOpen;
+	delete fileSaveAs;
+	delete fileQuit;
+	delete fileMenu;
+	delete menubar;
 }
 
-void MainWindow::AddMenuBar()
+void MainWindow::addMenuBar()
 {
-	_menubar = new QMenuBar(this);
+	menubar = new QMenuBar(this);
 	
 	// File menu
-	_fileMenu = new QMenu("File", this);
+	fileMenu = new QMenu("File", this);
 	// New project
-	_fileNew = new QAction("New...", this);
-	_fileNew->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_N));
-	connect(_fileNew, &QAction::triggered, this, &MainWindow::NewProject);
-	_fileMenu->addAction(_fileNew);
+	fileNew = new QAction("New...", this);
+	fileNew->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_N));
+	connect(fileNew, &QAction::triggered, this, &MainWindow::newProject);
+	fileMenu->addAction(fileNew);
 	
 	// Open project
-	_fileOpen = new QAction("Open...", this);
-	_fileOpen->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
-	connect(_fileOpen, &QAction::triggered, this, &MainWindow::OpenProject);
-	_fileMenu->addAction(_fileOpen);
+	fileOpen = new QAction("Open...", this);
+	fileOpen->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
+	connect(fileOpen, &QAction::triggered, this, &MainWindow::ppenProject);
+	fileMenu->addAction(fileOpen);
 
 	// Save-as
-	_fileSaveAs = new QAction("Save As...", this);
-	_fileSaveAs->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
-	connect(_fileSaveAs, &QAction::triggered, this, &MainWindow::SaveProject);
-	_fileMenu->addAction(_fileSaveAs);
+	fileSaveAs = new QAction("Save As...", this);
+	fileSaveAs->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
+	connect(fileSaveAs, &QAction::triggered, this, &MainWindow::SaveProject);
+	fileMenu->addAction(fileSaveAs);
 
 	// Add separator
-	_fileMenu->addSeparator();
+	fileMenu->addSeparator();
 
 	// Quit
-	_fileQuit = new QAction("Quit", this);
-	_fileQuit->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
-	connect(_fileQuit, &QAction::triggered, this, &MainWindow::QuitProject);
-	_fileMenu->addAction(_fileQuit);
+	fileQuit = new QAction("Quit", this);
+	fileQuit->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
+	connect(fileQuit, &QAction::triggered, this, &MainWindow::QuitProject);
+	fileMenu->addAction(fileQuit);
 
 	// Add file menu to menubar
-	_menubar->addMenu(_fileMenu);
+	menubar->addMenu(fileMenu);
 
 	// Edit menu
 	// TODO
 }
 
-void MainWindow::NewProject()
+void MainWindow::newProject()
 {
 	qDebug() << "New project";
 }
 
-void MainWindow::OpenProject()
+void MainWindow::ppenProject()
 {
 	qDebug() << "Open project";
 }
