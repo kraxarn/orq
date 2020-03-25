@@ -70,23 +70,3 @@ void MainWindow::addMenuBar()
 	// Edit menu
 	// TODO
 }
-
-void MainWindow::newProject()
-{
-	qDebug() << "New project";
-}
-
-void MainWindow::ppenProject()
-{
-	qDebug() << "Open project";
-}
-
-void MainWindow::SaveProject()
-{
-	qDebug() << "Save project";
-}
-
-void MainWindow::QuitProject()
-{
-	qDebug() << "Quit project";
-}
