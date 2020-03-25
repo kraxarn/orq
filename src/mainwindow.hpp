@@ -20,7 +20,7 @@ public:
 
 private: 
 	QMenuBar	*menubar;
-	QMenu		*fileMenu;
+	QDockWidget	*dockValidation;
 
 	void addMenuBar();
 };
