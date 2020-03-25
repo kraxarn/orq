@@ -9,7 +9,7 @@ private:
 	static QHash<QString, QString> iconNames;
 public:
 	Icons();
-	QIcon get(const QString &name);
+	static QIcon get(const QString &name);
 };
 
 
