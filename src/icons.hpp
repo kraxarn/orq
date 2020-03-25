@@ -11,5 +11,3 @@ public:
 	Icons();
 	static QIcon get(const QString &name);
 };
-
-
