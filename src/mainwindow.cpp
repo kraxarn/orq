@@ -63,4 +63,37 @@ void MainWindow::addMenuBar()
 	QAction::connect(fileQuit, &QAction::triggered, [this](bool checked) {
 		close();
 	});
+
+	// Edit menu
+	auto editMenu = menuBar()->addMenu("Edit");
+	// Rename project
+	editMenu->addAction(Icons::get("edit-rename"), "Rename Project...");
+	// Reload project
+	editMenu->addAction(Icons::get("edit-reload"), "Reload Project");
+
+	// View menu
+	auto viewMenu = menuBar()->addMenu("View");
+	// Validation engine
+	auto viewValidate = viewMenu->addAction("Validation Engine");
+	viewValidate->setCheckable(true);
+
+	// About menu
+	auto aboutMenu = menuBar()->addMenu("About");
+	// About app
+	auto aboutVersion = aboutMenu->addAction(
+		Icons::get("about-app"),
+		QString("Version %1").arg(VERSION));
+	aboutVersion->setEnabled(false);
+	// About Qt
+	auto aboutQt = aboutMenu->addAction(Icons::get("about-qt"), "About Qt");
+	QAction::connect(aboutQt, &QAction::triggered, [this](bool checked) {
+		QMessageBox::aboutQt(this);
+	});
+	// Third-party licenses
+	auto aboutLicenses = aboutMenu->addAction(Icons::get("about-licenses"), "Licenses");
+	QAction::connect(aboutLicenses, &QAction::triggered, [this](bool checked) {
+		QDesktopServices::openUrl(QUrl("https://gitlab.com/orqapp/orq/blob/master/third_party.md"));
+	});
+	// Check for updates
+	aboutMenu->addAction(Icons::get("about-update"), "Check for Updates");
 }

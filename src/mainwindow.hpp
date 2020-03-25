@@ -1,6 +1,7 @@
 #pragma once
 
 #include "icons.hpp"
+#include "main.hpp"
 
 #include <QMainWindow>
 #include <QApplication>
@@ -9,6 +10,9 @@
 #include <QDockWidget>
 #include <QFileDialog>
 #include <QStandardPaths>
+#include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
 
 class MainWindow : public QMainWindow
 {
