@@ -2,6 +2,7 @@
 
 #include "icons.hpp"
 #include "main.hpp"
+#include "updater.hpp"
 
 #include <QMainWindow>
 #include <QApplication>

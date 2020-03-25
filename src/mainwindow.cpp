@@ -95,5 +95,11 @@ void MainWindow::addMenuBar()
 		QDesktopServices::openUrl(QUrl("https://gitlab.com/orqapp/orq/blob/master/third_party.md"));
 	});
 	// Check for updates
-	aboutMenu->addAction(Icons::get("about-update"), "Check for Updates");
+	auto aboutUpdate = aboutMenu->addAction(Icons::get("about-update"), "Check for Updates");
+	QAction::connect(aboutUpdate, &QAction::triggered, [this](bool checked) {
+		if (Updater().isLatest())
+			QMessageBox::information(this, "Updater", "You are running the latest version");
+		else
+			QDesktopServices::openUrl(QUrl("https://gitlab.com/orqapp/orq/-/tags"));
+	});
 }
