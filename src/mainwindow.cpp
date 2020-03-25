@@ -35,9 +35,6 @@ void MainWindow::addMenuBar()
 {
 	// File menu
 	auto fileMenu = menuBar()->addMenu("File");
-	
-	// File options
-	auto fileMenu = menubar->addMenu("File");
 	// New
 	auto fileNew = fileMenu->addAction(Icons::get("file-new"), "New...");
 	fileNew->setShortcut(QKeySequence::New);
@@ -56,15 +53,9 @@ void MainWindow::addMenuBar()
 	// Open
 	auto fileOpen = fileMenu->addAction(Icons::get("file-open"), "Open...");
 	fileOpen->setShortcut(QKeySequence::Open);
-	QAction::connect(fileOpen, &QAction::triggered, [this](bool checked) {
-		// TODO
-	});
 	// Save as
-	auto fileSaveAs = fileMenu->addAction(Icons::get("file-save-as"), "Save as...");
+	auto fileSaveAs = fileMenu->addAction(Icons::get("file-save-as"), "Save As...");
 	fileSaveAs->setShortcut(QKeySequence::SaveAs);
-	QAction::connect(fileSaveAs, &QAction::triggered, [this](bool checked) {
-		// TODO
-	});
 	// Quit
 	fileMenu->addSeparator();
 	auto fileQuit = fileMenu->addAction(Icons::get("file-quit"), "Quit");
